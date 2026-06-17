@@ -1,5 +1,6 @@
 import { about, experience, skills, profile } from '../data/content.js'
 import { useReveal } from './useReveal.js'
+import { asset } from '../lib/asset.js'
 
 export function About() {
   const [ref, shown] = useReveal()
@@ -14,12 +15,29 @@ export function About() {
             {about.body.map((para, i) => (
               <p key={i}>{para}</p>
             ))}
+            {profile.links.instagram && (
+              <a
+                className="about__ig"
+                href={profile.links.instagram}
+                target="_blank"
+                rel="noreferrer"
+              >
+                🍜 Follow my food crawls @chewiebite ↗
+              </a>
+            )}
           </div>
-          <ul className="about__highlights">
-            {about.highlights.map((h) => (
-              <li key={h}>{h}</li>
-            ))}
-          </ul>
+          <div className="about__aside">
+            {about.photo && (
+              <div className="about__photo">
+                <img src={asset(about.photo)} alt={about.photoAlt} loading="lazy" />
+              </div>
+            )}
+            <ul className="about__highlights">
+              {about.highlights.map((h) => (
+                <li key={h}>{h}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -92,7 +110,7 @@ export function Contact() {
           I’m open to internships and new projects. The fastest way to reach me is email.
         </p>
         <a className="btn btn--primary btn--lg" href={`mailto:${profile.email}`}>
-          {profile.email}
+          Email me
         </a>
         <div className="contact__links">
           {profile.links.github && (
@@ -102,7 +120,7 @@ export function Contact() {
             <a href={profile.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
           )}
           {profile.links.resume && (
-            <a href={profile.links.resume} target="_blank" rel="noreferrer">Résumé</a>
+            <a href={asset(profile.links.resume)} target="_blank" rel="noreferrer">Résumé</a>
           )}
         </div>
       </div>

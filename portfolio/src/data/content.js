@@ -1,128 +1,137 @@
 // ============================================================================
 //  EDIT THIS FILE TO MAKE THE SITE YOURS.
 //  Everything the site displays comes from here — no need to touch components.
-//
-//  The content below is realistic placeholder material so the site looks
-//  finished out of the box. Swap in your real details as you go.
 // ============================================================================
 
 export const profile = {
   name: 'Janet Lim',
+  // Hero photo — shown next to your name. Drop the file in /public (e.g. '/me.png').
+  // A transparent PNG (like the collage) looks best. Set to '' for a text-only hero.
+  photo: '/me.png',
+  photoAlt: 'Janet Lim — a collage of food, friends, and good times',
   // A short, punchy tagline. This shows under your name in the hero.
-  tagline: 'I build at the seam of software, design, and data.',
-  // One or two sentences a recruiter reads first.
   intro:
-    'Computer Science student at Northeastern University working across full-stack ' +
-    'engineering, interface design, and data analysis. I like problems that refuse to ' +
-    'sit in one box — and I care as much about how a thing feels to use as whether it ships.',
-  email: 'lim.jane@northeastern.edu',
+    'CS & Finance student at Northeastern. I\'m exploring career paths spanning data, finance, and HR, and figuring out where I want to land.',
   location: 'Boston, MA',
   // Set any of these to '' to hide the link.
   links: {
-    github: 'https://github.com/janetlim',
-    linkedin: 'https://linkedin.com/in/janet-lim',
-    resume: '', // e.g. '/Janet-Lim-Resume.pdf' (drop the PDF in /public)
+    github: '', // add your GitHub URL here to show the link
+    linkedin: 'https://www.linkedin.com/in/janetjuhyunlim/',
+    resume: '/Janet-Lim-Resume.pdf', // drop the PDF in /public with this exact filename to enable
+    instagram: 'https://www.instagram.com/chewiebite/', // food Instagram — shown in About
   },
 }
 
-// The three lenses your work is organized by. These power the project filter.
+// The lenses your work is organized by. These power the project filter.
 // key must match the `category` on each project below.
 export const disciplines = [
-  { key: 'software', label: 'Software', blurb: 'Apps, tools, and systems I’ve built.' },
-  { key: 'design', label: 'Design', blurb: 'Interfaces and visual work.' },
-  { key: 'data', label: 'Data', blurb: 'Analysis, models, and visualization.' },
+  { key: 'software', label: 'Software', blurb: 'Apps, tools, and dashboards I’ve built.' },
+  { key: 'data', label: 'Data', blurb: 'Analysis, modeling, and visualization.' },
+  { key: 'finance', label: 'Finance', blurb: 'Markets, portfolios, and financial analysis.' },
+  { key: 'hr', label: 'HR', blurb: 'Talent, compliance, and people operations.' },
 ]
 
 export const about = {
   heading: 'About',
+  // Optional About photo. Empty = hidden (the hero photo is used instead).
+  photo: '',
+  photoAlt: '',
   // A longer paragraph (or two). Keep it human.
   body: [
-    'I’m a Northeastern CS student who keeps ending up on the boundary between ' +
-      'disciplines. On the software side I care about clean architecture and actually ' +
-      'shipping; on the design side, about how an interface feels in the first five ' +
-      'seconds; on the data side, about turning a messy spreadsheet into a story someone ' +
-      'can act on.',
-    'Most of my favorite projects started as a small annoyance — a clunky tool, a ' +
-      'question a dataset wouldn’t answer, a screen that fought back. Away from a ' +
-      'keyboard, I run a Boston food Instagram (@janeats, mostly) — which is really ' +
-      'just the same instinct in a different medium: notice something good, frame it, ' +
-      'and make other people want it too.',
+    'I’m Janet Lim, a Computer Science and Finance student at Northeastern University’s Khoury ' +
+    'College, drawn to the space where data and decision-making meet. Whether I’m auditing compliance records, ' +
+    'allocating a six-figure programming budget for 10,000+ residents, or turning 55,000 flight records into a dashboard people can actually explore, ' +
+    'I gravitate toward work that pairs technical rigor with real-world impact.',
+    'When I\'m not in class, I\'m usually exploring Boston one food crawl at a time, working on my golf game, or overanalyzing someone\'s MBTI type. ' +
+    'Wherever I am, I like spotting what\'s good and getting other people excited about it too.',
   ],
   // Quick facts shown as chips.
-  highlights: ['Northeastern University', 'B.S. Computer Science · 2026', 'Open to internships', '🍜 Boston food IG'],
+  highlights: [
+    'Northeastern · Khoury College',
+    'B.S. Computer Science + Finance · 2027',
+    '🏆 NACURH School of the Year 2026',
+    'Open to co-ops & internships',
+  ],
 }
 
 // ----------------------------------------------------------------------------
 //  PROJECTS — add/remove freely. `category` must be one of the discipline keys.
 //  `tags` are the small pills shown on each card.
 //  `image` is optional: drop a file in /public and reference it as '/my-img.png'.
+//  `links.code` / `links.live`: add URLs to show the buttons, or leave '' to hide.
 // ----------------------------------------------------------------------------
 export const projects = [
   {
-    title: 'Switchboard',
+    title: 'Hungr',
     category: 'software',
     blurb:
-      'A real-time collaboration board for student orgs — shared agendas, live presence, ' +
-      'and role-based access. Cut a club’s meeting-prep time roughly in half during pilot use.',
-    tags: ['React', 'Node', 'WebSockets', 'PostgreSQL'],
-    image: '',
-    links: { live: '', code: 'https://github.com/janetlim/switchboard' },
-    year: '2025',
-  },
-  {
-    title: 'Trailhead CLI',
-    category: 'software',
-    blurb:
-      'A command-line tool that scaffolds and lints project repos against a team style ' +
-      'guide. Published to npm; used to bootstrap a dozen course projects.',
-    tags: ['TypeScript', 'Node', 'CLI'],
-    image: '',
-    links: { live: '', code: 'https://github.com/janetlim/trailhead' },
-    year: '2024',
-  },
-  {
-    title: 'Atlas Design System',
-    category: 'design',
-    blurb:
-      'A component library and design language for a campus events platform — color, ' +
-      'type scale, and 30+ accessible components documented in Figma and code.',
-    tags: ['Figma', 'Design Systems', 'Accessibility'],
+      'A React smart-fridge app built at AliHacks 2025: log the ingredients you have and ' +
+      'get budget-friendly recipe suggestions. Ingredient-matching logic helps plan meals ' +
+      'and cut food waste, wrapped in a fast, no-friction interface.',
+    tags: ['React', 'JavaScript', 'Hackathon', 'UI Design'],
     image: '',
     links: { live: '', code: '' },
     year: '2025',
   },
   {
-    title: 'Commute Redesign',
-    category: 'design',
+    title: 'College Application Portal',
+    category: 'software',
     blurb:
-      'A UX case study reimagining the MBTA trip planner. Reframed the flow around ' +
-      '“when should I leave?” and tested with 8 riders — task time dropped notably.',
-    tags: ['UX Research', 'Prototyping', 'Usability Testing'],
+      'A database-backed portal that streamlines college-application workflows for applicants, ' +
+      'counselors, and admissions officers. Prototyped with Appsmith and Docker over SQL ' +
+      'databases, with role-based data flow across records, feedback, and decisions.',
+    tags: ['SQL', 'Appsmith', 'Docker', 'Databases'],
     image: '',
     links: { live: '', code: '' },
     year: '2024',
   },
   {
-    title: 'Where the Heat Lands',
-    category: 'data',
+    title: 'Interactive Flight Networks Dashboard',
+    category: 'software',
     blurb:
-      'An analysis of Boston’s urban heat islands cross-referencing tree canopy and ' +
-      'surface temperature. Found a clear gap between neighborhoods, mapped interactively.',
-    tags: ['Python', 'pandas', 'GeoPandas', 'D3'],
+      'Built an interactive dashboard that synthesizes 55,000+ flight records into an ' +
+      'accessible visual tool, making a large international dataset explorable for ' +
+      'non-technical users.',
+    tags: ['Python', 'pandas', 'HTML/CSS/JS', 'Data Viz'],
     image: '',
-    links: { live: '', code: 'https://github.com/janetlim/urban-heat' },
+    links: { live: '', code: '' },
     year: '2025',
   },
   {
-    title: 'Setlist Stats',
+    title: 'Healthcare Facility Cost Analysis',
     category: 'data',
     blurb:
-      'Scraped and modeled 10k+ live-show setlists to predict what a band plays next. ' +
-      'A logistic model beat the “play the hits” baseline by a meaningful margin.',
-    tags: ['Python', 'scikit-learn', 'matplotlib'],
+      'Researched cost drivers across 264 facilities using regression and hypothesis ' +
+      'testing, explaining 68% of total-expense variation, and delivered prioritized ' +
+      'recommendations in a report written for a non-technical audience.',
+    tags: ['Excel', 'SPSS', 'Regression', 'Hypothesis Testing'],
     image: '',
-    links: { live: '', code: 'https://github.com/janetlim/setlist-stats' },
+    links: { live: '', code: '' },
     year: '2024',
+  },
+  {
+    title: 'Stock Portfolio Management System',
+    category: 'software',
+    blurb:
+      'A Java stock-portfolio tracker built on MVC architecture, pulling real-time closing ' +
+      'prices, moving averages, and crossover analysis from the Alpha Vantage API. ' +
+      'Interface-driven and extensible, with portfolio creation, gain/loss calculations, and save/load.',
+    tags: ['Java', 'MVC', 'Alpha Vantage API', 'OOP'],
+    image: '',
+    links: { live: '', code: '' },
+    year: '2024',
+  },
+  {
+    title: 'Multi-Asset Portfolio Management',
+    category: 'finance',
+    blurb:
+      'Co-managed a simulated ~$900K, 25-holding portfolio (70% equity / 30% fixed income) ' +
+      'that beat the S&P 500 and Russell 1000 by ~6 points (-2.6% vs -8.7%) through a ' +
+      'downturn — while cutting risk below both benchmarks (beta 0.89, max drawdown -6.4%).',
+    tags: ['StockTrak', 'Excel', 'Risk (Sharpe, VaR)', 'Asset Allocation'],
+    image: '',
+    links: { live: '', code: '' },
+    year: '2026',
   },
 ]
 
@@ -131,28 +140,42 @@ export const projects = [
 // ----------------------------------------------------------------------------
 export const experience = [
   {
-    role: 'Software Engineering Co-op',
-    org: 'Wayfair',
-    period: 'Summer 2025',
+    role: 'Co-Vice President of Programming & Collaboration',
+    org: 'Resident Student Association',
+    period: 'Sep 2025 – Present',
     bullets: [
-      'Built internal tooling on a React + GraphQL stack used daily by the logistics team.',
-      'Shipped a caching layer that cut a key dashboard’s load time from ~4s to under 1s.',
+      'Allocate a $100k+ Resident Activity Fee budget to optimize spending across events serving 10,000+ residents.',
+      'Lead cross-functional collaboration with the E-Board, university admins, and outside vendors to plan and run ~40 programming initiatives a year — plus signature events like Husky Hunt and Snowball reaching ~700 participants.',
+      'Earned 2026 NACURH School of the Year as part of the leadership team — the top national recognition for university residence hall associations.',
     ],
   },
   {
-    role: 'Undergraduate Research Assistant',
-    org: 'Northeastern — Data Visualization Lab',
-    period: '2024 – 2025',
+    role: 'Talent Acquisition Support Co-op',
+    org: 'Brown Brothers Harriman',
+    period: 'Jul – Dec 2025',
     bullets: [
-      'Prototyped interactive visualizations for a study on civic data literacy.',
-      'Co-authored a poster presented at the university research expo.',
+      'Coordinated logistics for 500+ interviews, partnering cross-functionally with recruiters and hiring managers in a fast-paced professional-services environment.',
+      'Maintained and audited records across enterprise systems (Workday, Cisive) at a global financial firm, validating data accuracy and adherence to internal policies.',
     ],
   },
   {
-    role: 'Design Lead',
-    org: 'Student Web Development Club',
-    period: '2023 – 2024',
-    bullets: ['Set the visual direction and design system for three client projects.'],
+    role: 'Compliance Assistant',
+    org: 'Northeastern University — Office of Student Employment',
+    period: 'May 2026 – Present',
+    bullets: [
+      'Audit and process I-9 documentation in Fragomen to verify student-employee work authorization and maintain federal employment compliance.',
+      'Resolve student inquiries by referencing Workday records to check status, identify missing documentation, and pinpoint holds.',
+    ],
+  },
+  {
+    role: 'Barista',
+    org: 'Starbucks — Torrance, CA',
+    period: 'Sep – Dec 2022',
+    bullets: [
+      'Crafted beverages to Starbucks standards in a high-volume café.',
+      'Built rapport with regulars and defused concerns to keep the line moving and customers happy.',
+      'Kept customer areas stocked and upheld cleanliness and safety protocols.',
+    ],
   },
 ]
 
@@ -160,7 +183,9 @@ export const experience = [
 //  SKILLS — grouped. Add/remove groups and items freely.
 // ----------------------------------------------------------------------------
 export const skills = [
-  { group: 'Languages', items: ['JavaScript', 'TypeScript', 'Python', 'Java', 'SQL', 'HTML/CSS'] },
-  { group: 'Frameworks & Tools', items: ['React', 'Node.js', 'Vite', 'Git', 'Figma', 'Docker'] },
-  { group: 'Data', items: ['pandas', 'NumPy', 'scikit-learn', 'D3', 'matplotlib', 'Jupyter'] },
+  { group: 'Programming', items: ['Python', 'Java', 'JavaScript', 'SQL', 'HTML/CSS'] },
+  { group: 'Data & Analytics', items: ['pandas', 'Tableau', 'SPSS', 'Excel', 'Regression', 'Data Visualization'] },
+  { group: 'Finance', items: ['Portfolio Management', 'Risk (Sharpe, VaR)', 'Asset Allocation', 'Financial Modeling'] },
+  { group: 'Tools & Platforms', items: ['Workday', 'Fragomen', 'Jira', 'Slack', 'Canva', 'Google Suite', 'AI Tools'] },
+  { group: 'Languages', items: ['Korean (TOPIK 6)', 'Mandarin (Elementary)'] },
 ]
