@@ -1,8 +1,14 @@
 import { useMemo, useState } from 'react'
 import { projects, disciplines } from '../data/content.js'
 import { useReveal } from './useReveal.js'
+import { asset } from '../lib/asset.js'
 
-const filters = [{ key: 'all', label: 'All' }, ...disciplines]
+// Only show filter buttons for disciplines that actually have projects, so an
+// identity-only discipline like HR (a hero chip) doesn't show an empty filter.
+const filters = [
+  { key: 'all', label: 'All' },
+  ...disciplines.filter((d) => projects.some((p) => p.category === d.key)),
+]
 
 function ProjectCard({ p }) {
   const [ref, shown] = useReveal()
@@ -11,7 +17,7 @@ function ProjectCard({ p }) {
     <article ref={ref} className={`card reveal ${shown ? 'in' : ''}`}>
       <div className={`card__thumb cat--${p.category}`}>
         {p.image ? (
-          <img src={p.image} alt={p.title} loading="lazy" />
+          <img src={asset(p.image)} alt={p.title} loading="lazy" />
         ) : (
           <span className="card__placeholder">{disc?.label ?? p.category}</span>
         )}
@@ -58,22 +64,24 @@ export default function Projects() {
         </div>
 
         <div className="filterbar" role="tablist" aria-label="Filter projects">
-          {filters.map((f) => (
-            <button
-              key={f.key}
-              role="tab"
-              aria-selected={active === f.key}
-              className={`filterbar__btn ${active === f.key ? 'is-active' : ''}`}
-              onClick={() => setActive(f.key)}
-            >
-              {f.label}
-              <span className="filterbar__count">
-                {f.key === 'all'
-                  ? projects.length
-                  : projects.filter((p) => p.category === f.key).length}
-              </span>
-            </button>
-          ))}
+          {filters.map((f) => {
+            const count =
+              f.key === 'all'
+                ? projects.length
+                : projects.filter((p) => p.category === f.key).length
+            return (
+              <button
+                key={f.key}
+                role="tab"
+                aria-selected={active === f.key}
+                className={`filterbar__btn ${active === f.key ? 'is-active' : ''}`}
+                onClick={() => setActive(f.key)}
+              >
+                {f.label}
+                <span className="filterbar__count">{count}</span>
+              </button>
+            )
+          })}
         </div>
 
         <div className="grid">

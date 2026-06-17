@@ -1,6 +1,7 @@
 name: Deploy to GitHub Pages
 
-# Builds the Vite site and publishes it to GitHub Pages on every push to main.
+# Builds the Vite site (which lives in the portfolio/ subfolder) and publishes it
+# to GitHub Pages on every push to main.
 # One-time setup in your repo: Settings → Pages → "Build and deployment" →
 # Source: "GitHub Actions". Then push to main and the live URL appears there.
 
@@ -22,18 +23,22 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: portfolio
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: portfolio/package-lock.json
       - run: npm ci
       - run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: portfolio/dist
 
   deploy:
     needs: build
