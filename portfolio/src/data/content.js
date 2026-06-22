@@ -192,7 +192,7 @@ export const experience = [
   },
   {
     role: 'Barista',
-    org: 'Starbucks — Torrance, CA',
+    org: 'Starbucks',
     period: 'Sep – Dec 2022',
     bullets: [
       'Crafted beverages to Starbucks standards in a high-volume café.',
