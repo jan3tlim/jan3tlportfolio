@@ -65,7 +65,7 @@ export const projects = [
     title: 'Codescape — Code City Visualizer',
     category: 'software',
     blurb:
-      'An extension that visualizes your codebase as an isometric city.' + 
+      'An extension that visualizes your codebase as an isometric city. ' + 
       'Built with a 9-person team at Forge and published on the VS Code Marketplace. I contributed front-end rendering '+
       'in TypeScript (isometric grid canvas, building visuals, UML renderer)',
     tags: ['VS Code Extension','TypeScript', 'Front-End', 'Agile'],
