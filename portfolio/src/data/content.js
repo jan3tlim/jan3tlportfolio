@@ -117,7 +117,7 @@ export const projects = [
       'prices, moving averages, and crossover analysis from the Alpha Vantage API. ' +
       'Terminal-based, with portfolio creation, gain/loss calculations, and save/load.',
     tags: ['Java', 'MVC', 'Alpha Vantage API'],
-    image: '/stocksproj',
+    image: '/stocksproj.png',
     links: { live: '', code: '' },
     year: '2024',
   },
@@ -127,7 +127,7 @@ export const projects = [
     blurb:
       'Co-managed a simulated ~$900K, 25-holding portfolio (70% equity / 30% fixed income) ' +
       'that beat the S&P 500 and Russell 1000 by ~6 points (-2.6% vs -8.7%) through a ' +
-      'downturn — while cutting risk below both benchmarks (beta 0.89, max drawdown -6.4%).',
+      'downturn while cutting risk below both benchmarks (beta 0.89, max drawdown -6.4%).',
     tags: ['StockTrak', 'Excel', 'Risk (Sharpe, VaR)', 'Asset Allocation'],
     image: '',
     links: { live: '', code: '' },
