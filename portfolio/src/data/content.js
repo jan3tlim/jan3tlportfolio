@@ -17,7 +17,7 @@ export const profile = {
   links: {
     github: '', // add your GitHub URL here to show the link
     linkedin: 'https://www.linkedin.com/in/janetjuhyunlim/',
-    resume: '/Janet-Lim-Resume.pdf', // drop the PDF in /public with this exact filename to enable
+    resume: '/Janet Lim Data Resume-20.pdf', // drop the PDF in /public with this exact filename to enable
     instagram: 'https://www.instagram.com/chewiebite/', // food Instagram — shown in About
   },
 }
@@ -39,11 +39,11 @@ export const about = {
   // A longer paragraph (or two). Keep it human.
   body: [
     'I’m Janet Lim, a Computer Science and Finance student at Northeastern University’s Khoury ' +
-    'College, drawn to the space where data and decision-making meet. Whether I’m auditing compliance records, ' +
-    'allocating a six-figure programming budget for 10,000+ residents, or turning 55,000 flight records into a dashboard people can actually explore, ' +
-    'I gravitate toward work that pairs technical rigor with real-world impact.',
+    'College, drawn to data and creative decision-making. Whether I’m auditing compliance records, ' +
+    'coming up with programs for the Northeastern residential community, or turning data into a dashboards people can explore, ' +
+    'I gravitate toward work that involves communities and real-world impact.',
     'When I\'m not in class, I\'m usually exploring Boston one food crawl at a time, working on my golf game, or overanalyzing someone\'s MBTI type. ' +
-    'Wherever I am, I like spotting what\'s good and getting other people excited about it too.',
+    'Wherever I am, I like spotting what\'s good and getting other people excited about it.',
   ],
   // Quick facts shown as chips.
   highlights: [
@@ -62,28 +62,28 @@ export const about = {
 // ----------------------------------------------------------------------------
 export const projects = [
   {
-    title: 'Hungr',
+    title: 'Codescape — Code City Visualizer',
     category: 'software',
     blurb:
-      'A React smart-fridge app built at AliHacks 2025: log the ingredients you have and ' +
-      'get budget-friendly recipe suggestions. Ingredient-matching logic helps plan meals ' +
-      'and cut food waste, wrapped in a fast, no-friction interface.',
-    tags: ['React', 'JavaScript', 'Hackathon', 'UI Design'],
-    image: '',
-    links: { live: '', code: '' },
-    year: '2025',
+      'An extension that visualizes your codebase as an isometric city.' + 
+      'Built with a 9-person team at Forge and published on the VS Code Marketplace. I contributed front-end rendering '+
+      'in TypeScript (isometric grid canvas, building visuals, UML renderer)',
+    tags: ['VS Code Extension','TypeScript', 'Front-End', 'Agile'],
+    image: '/codescape.png',
+    links: { live: 'https://marketplace.visualstudio.com/items?itemName=Codescape.codescapes', code: 'https://github.com/pdsl2005/codescape' },
+    year: '2026',
   },
   {
-    title: 'College Application Portal',
+    title: 'Retrocadia',
     category: 'software',
     blurb:
-      'A database-backed portal that streamlines college-application workflows for applicants, ' +
-      'counselors, and admissions officers. Prototyped with Appsmith and Docker over SQL ' +
-      'databases, with role-based data flow across records, feedback, and decisions.',
-    tags: ['SQL', 'Appsmith', 'Docker', 'Databases'],
-    image: '',
-    links: { live: '', code: '' },
-    year: '2024',
+      'A multiplayer retro arcade web app (TypeScript, Supabase, Postgres) '+
+      'upgraded by a 4-person team. I worked on the UI, built the profile banner, '+
+      'supported the Supabase and backend Pong work, and added keyboard navigation and screen reader accessibility.',
+    tags: ['TypeScript', 'React', 'Agile', 'PostgreSQL'],
+    image: '/retrocadia.png',
+    links: { live: 'https://summer26-project-group-106.onrender.com', code: '' },
+    year: '2026',
   },
   {
     title: 'Interactive Flight Networks Dashboard',
@@ -93,8 +93,8 @@ export const projects = [
       'accessible visual tool, making a large international dataset explorable for ' +
       'non-technical users.',
     tags: ['Python', 'pandas', 'HTML/CSS/JS', 'Data Viz'],
-    image: '',
-    links: { live: '', code: '' },
+    image: '/flightsdashboard.png',
+    links: { live: 'https://ian-menachery.github.io/Flights_Project/website/', code: 'https://github.com/ian-menachery/Flights_Project' },
     year: '2025',
   },
   {
@@ -115,9 +115,9 @@ export const projects = [
     blurb:
       'A Java stock-portfolio tracker built on MVC architecture, pulling real-time closing ' +
       'prices, moving averages, and crossover analysis from the Alpha Vantage API. ' +
-      'Interface-driven and extensible, with portfolio creation, gain/loss calculations, and save/load.',
-    tags: ['Java', 'MVC', 'Alpha Vantage API', 'OOP'],
-    image: '',
+      'Terminal-based, with portfolio creation, gain/loss calculations, and save/load.',
+    tags: ['Java', 'MVC', 'Alpha Vantage API'],
+    image: '/stocksproj',
     links: { live: '', code: '' },
     year: '2024',
   },
@@ -133,6 +133,19 @@ export const projects = [
     links: { live: '', code: '' },
     year: '2026',
   },
+  {
+    title: 'College Application Portal',
+    category: 'software',
+    blurb:
+      'A database-backed portal that streamlines college-application workflows for applicants, ' +
+      'counselors, and admissions officers. Prototyped with Appsmith and Docker over SQL ' +
+      'databases, with role-based data flow across records, feedback, and decisions.',
+    tags: ['SQL', 'Appsmith', 'Docker', 'Databases'],
+    image: '',
+    links: { live: '', code: '' },
+    year: '2024',
+  },
+  
 ]
 
 // ----------------------------------------------------------------------------
@@ -165,6 +178,16 @@ export const experience = [
     bullets: [
       'Audit and process I-9 documentation in Fragomen to verify student-employee work authorization and maintain federal employment compliance.',
       'Resolve student inquiries by referencing Workday records to check status, identify missing documentation, and pinpoint holds.',
+    ],
+  },
+  {
+    role: 'Software Lab Member',
+    org: 'Forge - Northeastern Product Lab',
+    period: 'Jan – April 2026',
+    bullets: [
+      'Shipped CodeScape, a VS Code extension that visualizes a codebase as an isometric city to boost developer motivation, published live on the VS Marketplace.',
+      'Built front-end rendering components in TypeScript as part of a 9-person cross-functional team, contributing to the canvas, isometric grid, and building visualizations.',
+      'Worked through the full product lifecycle (user research, prototyping, agile sprints) and pitched the concept to a Microsoft Senior PM',
     ],
   },
   {
